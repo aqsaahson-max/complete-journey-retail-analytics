@@ -1,0 +1,289 @@
+[
+  {
+    "file": "transactions.rds",
+    "actual_rows": 1469307,
+    "expected_rows": 1469307,
+    "matches_expected": true,
+    "source_columns": [
+      "household_id",
+      "store_id",
+      "basket_id",
+      "product_id",
+      "quantity",
+      "sales_value",
+      "retail_disc",
+      "coupon_disc",
+      "coupon_match_disc",
+      "week",
+      "transaction_timestamp"
+    ],
+    "source_dtypes": {
+      "household_id": "str",
+      "store_id": "str",
+      "basket_id": "str",
+      "product_id": "str",
+      "quantity": "float64",
+      "sales_value": "float64",
+      "retail_disc": "float64",
+      "coupon_disc": "float64",
+      "coupon_match_disc": "float64",
+      "week": "int32",
+      "transaction_timestamp": "datetime64[s]"
+    },
+    "converted_dtypes": {
+      "household_id": "str",
+      "store_id": "str",
+      "basket_id": "str",
+      "product_id": "str",
+      "quantity": "float64",
+      "sales_value": "float64",
+      "retail_disc": "float64",
+      "coupon_disc": "float64",
+      "coupon_match_disc": "float64",
+      "week": "int32",
+      "transaction_timestamp": "datetime64[ns]",
+      "source_file": "str",
+      "source_row_number": "int64"
+    },
+    "timestamp_storage_changes": {
+      "transaction_timestamp": {
+        "from": "datetime64[s]",
+        "to": "datetime64[ns]"
+      }
+    },
+    "missing_values": {
+      "household_id": 0,
+      "store_id": 0,
+      "basket_id": 0,
+      "product_id": 0,
+      "quantity": 0,
+      "sales_value": 0,
+      "retail_disc": 0,
+      "coupon_disc": 0,
+      "coupon_match_disc": 0,
+      "week": 0,
+      "transaction_timestamp": 0
+    },
+    "parquet_round_trip": "passed"
+  },
+  {
+    "file": "products.rda",
+    "actual_rows": 92331,
+    "expected_rows": 92331,
+    "matches_expected": true,
+    "source_columns": [
+      "product_id",
+      "manufacturer_id",
+      "department",
+      "brand",
+      "product_category",
+      "product_type",
+      "package_size"
+    ],
+    "source_dtypes": {
+      "product_id": "str",
+      "manufacturer_id": "str",
+      "department": "str",
+      "brand": "category",
+      "product_category": "str",
+      "product_type": "str",
+      "package_size": "str"
+    },
+    "converted_dtypes": {
+      "product_id": "str",
+      "manufacturer_id": "str",
+      "department": "str",
+      "brand": "category",
+      "product_category": "str",
+      "product_type": "str",
+      "package_size": "str",
+      "source_file": "str",
+      "source_row_number": "int64"
+    },
+    "timestamp_storage_changes": {},
+    "missing_values": {
+      "product_id": 0,
+      "manufacturer_id": 0,
+      "department": 0,
+      "brand": 0,
+      "product_category": 540,
+      "product_type": 528,
+      "package_size": 30586
+    },
+    "parquet_round_trip": "passed"
+  },
+  {
+    "file": "demographics.rda",
+    "actual_rows": 801,
+    "expected_rows": 801,
+    "matches_expected": true,
+    "source_columns": [
+      "household_id",
+      "age",
+      "income",
+      "home_ownership",
+      "marital_status",
+      "household_size",
+      "household_comp",
+      "kids_count"
+    ],
+    "source_dtypes": {
+      "household_id": "str",
+      "age": "category",
+      "income": "category",
+      "home_ownership": "category",
+      "marital_status": "category",
+      "household_size": "category",
+      "household_comp": "category",
+      "kids_count": "category"
+    },
+    "converted_dtypes": {
+      "household_id": "str",
+      "age": "category",
+      "income": "category",
+      "home_ownership": "category",
+      "marital_status": "category",
+      "household_size": "category",
+      "household_comp": "category",
+      "kids_count": "category",
+      "source_file": "str",
+      "source_row_number": "int64"
+    },
+    "timestamp_storage_changes": {},
+    "missing_values": {
+      "household_id": 0,
+      "age": 0,
+      "income": 0,
+      "home_ownership": 233,
+      "marital_status": 137,
+      "household_size": 0,
+      "household_comp": 0,
+      "kids_count": 0
+    },
+    "parquet_round_trip": "passed"
+  },
+  {
+    "file": "campaigns.rda",
+    "actual_rows": 6589,
+    "expected_rows": 6589,
+    "matches_expected": true,
+    "source_columns": [
+      "campaign_id",
+      "household_id"
+    ],
+    "source_dtypes": {
+      "campaign_id": "str",
+      "household_id": "str"
+    },
+    "converted_dtypes": {
+      "campaign_id": "str",
+      "household_id": "str",
+      "source_file": "str",
+      "source_row_number": "int64"
+    },
+    "timestamp_storage_changes": {},
+    "missing_values": {
+      "campaign_id": 0,
+      "household_id": 0
+    },
+    "parquet_round_trip": "passed"
+  },
+  {
+    "file": "campaign_descriptions.rda",
+    "actual_rows": 27,
+    "expected_rows": 27,
+    "matches_expected": true,
+    "source_columns": [
+      "campaign_id",
+      "campaign_type",
+      "start_date",
+      "end_date"
+    ],
+    "source_dtypes": {
+      "campaign_id": "str",
+      "campaign_type": "category",
+      "start_date": "object",
+      "end_date": "object"
+    },
+    "converted_dtypes": {
+      "campaign_id": "str",
+      "campaign_type": "category",
+      "start_date": "object",
+      "end_date": "object",
+      "source_file": "str",
+      "source_row_number": "int64"
+    },
+    "timestamp_storage_changes": {},
+    "missing_values": {
+      "campaign_id": 0,
+      "campaign_type": 0,
+      "start_date": 0,
+      "end_date": 0
+    },
+    "parquet_round_trip": "passed"
+  },
+  {
+    "file": "coupons.rda",
+    "actual_rows": 116204,
+    "expected_rows": 116204,
+    "matches_expected": true,
+    "source_columns": [
+      "coupon_upc",
+      "product_id",
+      "campaign_id"
+    ],
+    "source_dtypes": {
+      "coupon_upc": "str",
+      "product_id": "str",
+      "campaign_id": "str"
+    },
+    "converted_dtypes": {
+      "coupon_upc": "str",
+      "product_id": "str",
+      "campaign_id": "str",
+      "source_file": "str",
+      "source_row_number": "int64"
+    },
+    "timestamp_storage_changes": {},
+    "missing_values": {
+      "coupon_upc": 0,
+      "product_id": 0,
+      "campaign_id": 0
+    },
+    "parquet_round_trip": "passed"
+  },
+  {
+    "file": "coupon_redemptions.rda",
+    "actual_rows": 2102,
+    "expected_rows": 2102,
+    "matches_expected": true,
+    "source_columns": [
+      "household_id",
+      "coupon_upc",
+      "campaign_id",
+      "redemption_date"
+    ],
+    "source_dtypes": {
+      "household_id": "str",
+      "coupon_upc": "str",
+      "campaign_id": "str",
+      "redemption_date": "object"
+    },
+    "converted_dtypes": {
+      "household_id": "str",
+      "coupon_upc": "str",
+      "campaign_id": "str",
+      "redemption_date": "object",
+      "source_file": "str",
+      "source_row_number": "int64"
+    },
+    "timestamp_storage_changes": {},
+    "missing_values": {
+      "household_id": 0,
+      "coupon_upc": 0,
+      "campaign_id": 0,
+      "redemption_date": 0
+    },
+    "parquet_round_trip": "passed"
+  }
+]

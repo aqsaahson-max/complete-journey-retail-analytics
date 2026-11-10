@@ -1,0 +1,97 @@
+{
+  "transactions": {
+    "rows": 1469307,
+    "columns": [
+      "household_id",
+      "store_id",
+      "basket_id",
+      "product_id",
+      "quantity",
+      "sales_value",
+      "retail_disc",
+      "coupon_disc",
+      "coupon_match_disc",
+      "week",
+      "transaction_timestamp"
+    ],
+    "parquet_sha256": "d2a51a196532db3056149ed364f93b42f2a4c4eeb1340ce92e99ea5bf17d2f5b",
+    "csv_sha256": "f95e6e9dea1f4d50c67a045e8cb88c85669f08f04c9a82612a37ed6f2379eb31",
+    "csv_readback": "passed"
+  },
+  "products": {
+    "rows": 92331,
+    "columns": [
+      "product_id",
+      "manufacturer_id",
+      "department",
+      "brand",
+      "product_category",
+      "product_type",
+      "package_size"
+    ],
+    "parquet_sha256": "a6205afe1f1908e1206412dd2756d9c5b667eaf13449298c2ba5c70306b54bc1",
+    "csv_sha256": "f2e9f6c31d11e0524b55c3c70edc625be1ace63ef7322ff7e6a9f9c26e6261ea",
+    "csv_readback": "passed"
+  },
+  "demographics": {
+    "rows": 801,
+    "columns": [
+      "household_id",
+      "age",
+      "income",
+      "home_ownership",
+      "marital_status",
+      "household_size",
+      "household_comp",
+      "kids_count"
+    ],
+    "parquet_sha256": "f48f4dcc2a1a1d1baf822e2f603e37b5cbd7e5859b0465060db83867a608bf7d",
+    "csv_sha256": "8e8a1a49da1309bfcd39e1371da0f3e60786751cb6be3be937808eb1f270c13e",
+    "csv_readback": "passed"
+  },
+  "campaigns": {
+    "rows": 6589,
+    "columns": [
+      "campaign_id",
+      "household_id"
+    ],
+    "parquet_sha256": "16977ab36e85987d9a06b316ed812fb8d5e2b829f56d4c9ceca891e978c0e25e",
+    "csv_sha256": "553a2bccd3cbe636b6184d91591b549e3a1597d9c6e1f40506df945bba5a576b",
+    "csv_readback": "passed"
+  },
+  "campaign_descriptions": {
+    "rows": 27,
+    "columns": [
+      "campaign_id",
+      "campaign_type",
+      "start_date",
+      "end_date"
+    ],
+    "parquet_sha256": "a6d7df0cb494c96e969ce994a89f934a7f98d3d96cb8c45ee4f748595bd7134a",
+    "csv_sha256": "97e27ad8238ac40feeebae83306945da844ca578e04a842a5a2994f75d136bbb",
+    "csv_readback": "passed"
+  },
+  "coupons": {
+    "rows": 116204,
+    "columns": [
+      "coupon_upc",
+      "product_id",
+      "campaign_id"
+    ],
+    "parquet_sha256": "a59a720af6df822ad65503fb84731736582141b7211ea4a828dbb542e74343bb",
+    "csv_sha256": "46e55373270eb789604a250400052008b9ef3d570297674a642724784f9b6f11",
+    "csv_readback": "passed"
+  },
+  "coupon_redemptions": {
+    "rows": 2102,
+    "columns": [
+      "household_id",
+      "coupon_upc",
+      "campaign_id",
+      "redemption_date"
+    ],
+    "parquet_sha256": "33cc793f131c0000166c8b21bfbe5c350caba59ac8ac29b4b87d6a8cc848d0ea",
+    "csv_sha256": "414622314f7f86db830e215e537239e2fe1013e6511fce44bd1b0302f89c20d1",
+    "csv_readback": "passed"
+  }
+}

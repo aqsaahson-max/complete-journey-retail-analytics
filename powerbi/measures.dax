@@ -1,0 +1,10 @@
+// Reconstruction definitions: create each measure separately in Power BI.
+// Adapt the table name if your SQL import uses a different display name.
+Total Sales = SUM('dw FactSales'[SalesValue])
+Purchasing Households = DISTINCTCOUNT('dw FactSales'[HouseholdKey])
+Unique Baskets = DISTINCTCOUNT('dw FactSales'[BasketID])
+Avg Basket Value = DIVIDE([Total Sales], [Unique Baskets])
+Retail Discounts = SUM('dw FactSales'[RetailDiscount])
+Manufacturer Coupon Discounts = SUM('dw FactSales'[CouponDiscount])
+Coupon Match Discounts = SUM('dw FactSales'[CouponMatchDiscount])
+Combined Recorded Discounts = [Retail Discounts] + [Manufacturer Coupon Discounts] + [Coupon Match Discounts]
