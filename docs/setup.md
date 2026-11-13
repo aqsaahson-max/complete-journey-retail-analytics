@@ -27,7 +27,14 @@ Confirm that the Reset Staging task targets the intended project database. It cl
 ## 4. Load and validate the warehouse
 Before running `sql/load_star_schema.sql`, compare the SHA-256 hash of your raw `transactions.rds` with its declared `@SourceHash`. Use `Get-FileHash -Algorithm SHA256 data/raw/transactions.rds`. The script records a fixed snapshot label and hash; it does not calculate the source-file hash from SQL staging. If using a different source snapshot, review all expectations and update the metadata deliberately instead of bypassing validation.
 
-Run `sql/load_star_schema.sql`, then `sql/verify_warehouse.sql`. The loader replaces the fact table after its preflight checks; use only the intended project database. Review the audit and reconciliation outputs. Run `sql/create_data_marts.sql` and `sql/analytical_queries.sql` for the category-performance view and example analyses.
+Run these scripts in order:
+
+1. `sql/load_star_schema.sql`
+2. `sql/create_data_marts.sql`
+3. `sql/verify_warehouse.sql`
+4. `sql/analytical_queries.sql`
+
+Create the data mart view before running verification because the verification script checks its totals. Review the load audit and reconciliation outputs. The loader replaces the sales fact table after its preflight checks, so execute it only against the intended project database.
 
 ## 5. Rebuild or reconnect Power BI
 The data-bearing PBIX is not included. Use [the dashboard guide](../powerbi/README.md), warehouse model image and measure definitions to reproduce the report. Import the warehouse tables from your SQL Server, configure the four active dimension-to-fact relationships and create the visuals. The repository is not a one-click dashboard installer.
