@@ -1,0 +1,34 @@
+# Source data and generated datasets
+data/raw/
+data/converted/
+data/csv_staging/
+
+# Generated profiling and validation outputs
+docs/profiling/
+docs/quality-investigation/
+docs/conversion-checks.json
+docs/csv-export-checks.json
+
+# Python environment and cache
+.venv/
+__pycache__/
+*.pyc
+
+# Visual Studio and SSIS build files
+.vs/
+[Bb]in/
+[Oo]bj/
+*.dtproj.user
+*.user
+*.ispac
+
+# Local configuration and logs
+.env
+.env.*
+*.log
+
+# Data-bearing reports and private material
+*.pbix
+*.pdf
+*.zip
+private/
